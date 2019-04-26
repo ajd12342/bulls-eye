@@ -14,4 +14,7 @@ validWords=[]
 for comb in possible:
 	validWords.extend([''.join(_) for _ in list(itertools.permutations(comb)) if ''.join(_) in words])
 validWords=list(set(validWords))
+validWords.sort()
+validWords=[_.lower() if len(_)!=7 else _ for _ in validWords]
 print(validWords)
+print("No of words: ",len(validWords))
